@@ -47,7 +47,7 @@ h1 {
     font-size: 30px;
     text-align: center;
     margin: 100px auto 5px 220px;
-    border: solid 5px #843c0c;
+    border: solid 5px black;
     /* background-color: rgb(195, 34, 34); */
 }
 
@@ -74,16 +74,43 @@ h1 {
 .bets {
     display: flex;
     flex-direction: inline;
-    justify-content: space-evenly;
     font-size: 18px;
     /* border: solid 2px black; */
     margin: 1rem 30vw auto 30vw;
 }
 
-.red {
-    border: solid 2px black;
+.red-left {
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-right: 100px solid #D60000;
+    border-bottom: 50px solid transparent;
+    margin-right: 0px;
 }
 
-.black {
-    border: solid 2px black;
+.red-right {
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-left: 100px solid #D60000;
+    border-bottom: 50px solid transparent;
+    margin-left: 0px;
+}
+
+.black-left {
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-right: 100px solid #232323;
+    border-bottom: 50px solid transparent;
+    margin-right: 0px;
+}
+
+.black-right {
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-left: 100px solid #232323;
+    border-bottom: 50px solid transparent;
+    margin-left: 0px;
 }
