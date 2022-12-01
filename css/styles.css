@@ -2,6 +2,7 @@
 
 body {
     background-color: #0EAE36;
+    font-family: 'Abel', sans-serif;
 }
 
 h1 {
@@ -23,8 +24,8 @@ h1 {
 }
 
 .wheel {
-    height: 70%;
-    width: 150%;
+    height: 80%;
+    width: 120%;
 }
 
 .spinBtn {
@@ -38,14 +39,14 @@ h1 {
 }
 .playerAmount {
     font-size: 25px;
-    justify-content: center;
-    margin: 5rem 5rem 1px 25rem;
+    text-align: center;
+    margin: 5rem 20px 1px 200px;
     border: solid 2px black;
 }
 .money {
     font-size: 25px;
-    justify-content: center;
-    margin: 1px 5rem auto 32rem;
+    text-align: center;
+    margin: 5px 20px auto 200px;
     border: solid 2px black;
 }
 
