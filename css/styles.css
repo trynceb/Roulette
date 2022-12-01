@@ -1,0 +1,75 @@
+
+
+body {
+    background-color: #0EAE36;
+}
+
+h1 {
+    text-align: center;
+}
+
+.mainContent {
+    display: flex;
+    flex-direction: row;
+    height: 60vh;
+    width: 100%;
+    overflow: hidden;
+    border: solid 2px black;
+}
+
+.leftSide {
+    display: flex;
+    flex-direction: column;
+}
+
+.wheel {
+    height: 70%;
+    width: 150%;
+}
+
+.spinBtn {
+    font-size: 16px;
+    margin: 1rem 1rem auto 5rem;
+}
+
+.rightSide {
+    display: flex;
+    flex-direction: column;
+}
+.playerAmount {
+    font-size: 25px;
+    justify-content: center;
+    margin: 5rem 5rem 1px 25rem;
+    border: solid 2px black;
+}
+.money {
+    font-size: 25px;
+    justify-content: center;
+    margin: 1px 5rem auto 32rem;
+    border: solid 2px black;
+}
+
+.betTitle {
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    border: solid 2px black;
+    margin: 1rem 40vw auto 40vw;
+}
+
+.bets {
+    display: flex;
+    flex-direction: inline;
+    justify-content: space-evenly;
+    font-size: 18px;
+    border: solid 2px black;
+    margin: 1rem 30vw auto 30vw;
+}
+
+.red {
+    border: solid 2px black;
+}
+
+.black {
+    border: solid 2px black;
+}
