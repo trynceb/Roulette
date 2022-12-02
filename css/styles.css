@@ -96,9 +96,16 @@ h1 {
     margin: 2rem 10vw auto 9vw;
 }
 
+#red-chip {
+    position: fixed;
+    height: 5rem;
+    margin: 1rem auto auto 3rem;
+}
+
 .red-left {
     width: 0;
     height: 0;
+    z-index: 2;
     border-top: 50px solid transparent;
     border-right: 100px solid #D60000;
     border-bottom: 50px solid transparent;
@@ -108,6 +115,7 @@ h1 {
 .red-right {
     width: 0;
     height: 0;
+    z-index: 2;
     border-top: 50px solid transparent;
     border-left: 100px solid #D60000;
     border-bottom: 50px solid transparent;
@@ -128,9 +136,16 @@ h1 {
     margin: 2rem 16vw auto 8vw;
 }
 
+#black-chip {
+    position:fixed;
+    height: 5rem;
+    margin: 1rem auto auto 3rem;
+}
+
 .black-left {
     width: 0;
     height: 0;
+    z-index: 2;
     border-top: 50px solid transparent;
     border-right: 100px solid #232323;
     border-bottom: 50px solid transparent;
@@ -140,6 +155,7 @@ h1 {
 .black-right {
     width: 0;
     height: 0;
+    z-index: 2;
     border-top: 50px solid transparent;
     border-left: 100px solid #232323;
     border-bottom: 50px solid transparent;

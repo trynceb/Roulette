@@ -1,6 +1,12 @@
 
 const spinBtnEl = document.querySelector(".spinBtn")
 const numberWindowEl = document.querySelector(".numberWindow")
+const redEl = document.querySelector(".left-bet")
+const blackEl = document.querySelector(".right-bet")
+const winLoseEl = document.querySelector(".winLose")
+const moneyEl = document.querySelector(".money")
+const redChipEl = document.getElementById("red-chip")
+const blackChipEl = document.getElementById("black-chip")
 let oddsAre
 let theColorIs
 
@@ -8,6 +14,10 @@ let theColorIs
 spinBtnEl.addEventListener("click", randomNum)
 spinBtnEl.addEventListener("click", evenOrOdd)
 spinBtnEl.addEventListener("click", blackOrRed)
+spinBtnEl.addEventListener("click", bettingRed)
+spinBtnEl.addEventListener("click", bettingBlack)
+redEl.addEventListener("click", placeBetRed)
+blackEl.addEventListener("click", placeBetBlack)
 
 
 function randomNum() {
@@ -47,6 +57,40 @@ function blackOrRed() {
     }
     numberWindowEl.style.backgroundColor = backColor
 }
+
+function placeBetRed() {
+    redChipEl.style.zIndex = "4"
+    blackChipEl.style.zIndex ="0"
+}
+
+function placeBetBlack() {
+    blackChipEl.style.zIndex = "4"
+    redChipEl.style.zIndex = "0"
+}
+
+function bettingRed() {
+    if (redChipEl.style.zIndex == "4" && theColorIs == "red") {
+        winLoseEl.innerHTML = "You win!"
+        moneyEl.innerHTML = moneyEl.innerHTML * 2
+    } else if (redChipEl.style.zIndex == "4" && theColorIs == "black") {
+        winLoseEl.innerHTML = "Sorry, you lose."
+        moneyEl.innerHTML = 100 
+    }
+    redChipEl.style.zIndex = "0"
+}
+
+function bettingBlack() {
+    if (blackChipEl.style.zIndex == "4" && theColorIs == "black") {
+        winLoseEl.innerHTML = "You win!"
+        moneyEl.innerHTML = moneyEl.innerHTML * 2 
+        blackChipEl.style.zIndex = "0"
+    } else if (blackChipEl.style.zIndex == "4" && theColorIs == "red") {
+        winLoseEl.innerHTML = "Sorry, you lose."
+        moneyEl.innerHTML = 100
+        blackChipEl.style.zIndex = "0"
+    }
+}
+
 
 // Create an array for the roulette board 0-36 + 00
 
