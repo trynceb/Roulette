@@ -10,23 +10,47 @@ const blackChipEl = document.getElementById("black-chip")
 let oddsAre
 let theColorIs
 
-
-spinBtnEl.addEventListener("click", randomNum)
-spinBtnEl.addEventListener("click", evenOrOdd)
-spinBtnEl.addEventListener("click", blackOrRed)
-spinBtnEl.addEventListener("click", bettingRed)
-spinBtnEl.addEventListener("click", bettingBlack)
+spinBtnEl.addEventListener("click", spinTheWheel)
 redEl.addEventListener("click", placeBetRed)
 blackEl.addEventListener("click", placeBetBlack)
+console.log(redChipEl.style.zIndex)
+console.log(blackChipEl.style.zIndex)
+
+function spinTheWheel() {
+    if (redChipEl.style.zIndex === "4" || blackChipEl.style.zIndex === "4") {
+        console.log("Still running")
+        randomNum()
+        evenOrOdd()
+        blackOrRed()
+        bettingRed()
+        bettingBlack()
+        console.log(redChipEl.style.zIndex)
+        console.log(blackChipEl.style.zIndex)
+        redChipEl.style.zIndex = "0"
+        blackChipEl.style.zIndex = "0"
+        console.log(redChipEl.style.zIndex)
+        console.log(blackChipEl.style.zIndex)
+    } else {
+        return
+    }
+}
+
+//spin wheel checks if zInex is at 4 if yes, spin
+// else return ^^^
+
+
+//set a boolean as false, when clicked = true ? flase
 
 
 function randomNum() {
+    console.log("randomNum")
     let randomNumber =  Math.floor(Math.random() * 36) + 1
     numberWindowEl.innerHTML = randomNumber
     return randomNumber
 }
 
 function evenOrOdd() {
+    console.log("evenOrOdd")
     let isEven = numberWindowEl.textContent
     if (isEven % 2 == 0) {
         oddsAre = "even"
@@ -36,19 +60,20 @@ function evenOrOdd() {
 }
 
 function blackOrRed() {
+    console.log("blackOrRed")
     let number = numberWindowEl.textContent
     let isOdd = oddsAre
     let backColor
-    if (number > 0 && number < 11 && isOdd == "odd") {
+    if (number > 0 && number < 11 && isOdd === "odd") {
         theColorIs = "red"
         backColor = "#D60000"
-    } else if (number > 10 && number < 19 && isOdd == "even") {
+    } else if (number > 10 && number < 19 && isOdd === "even") {
         theColorIs = "red"
         backColor = "#D60000"
-    } else if (number > 18 && number < 29 && isOdd == "odd") {
+    } else if (number > 18 && number < 29 && isOdd === "odd") {
         theColorIs = "red"
         backColor = "#D60000"
-    } else if (number > 28 && number < 37 && isOdd == "even") {
+    } else if (number > 28 && number < 37 && isOdd === "even") {
         theColorIs = "red"
         backColor = "#D60000"
     } else {
@@ -58,21 +83,29 @@ function blackOrRed() {
     numberWindowEl.style.backgroundColor = backColor
 }
 
+
 function placeBetRed() {
+    console.log("placeBetRed")
     redChipEl.style.zIndex = "4"
     blackChipEl.style.zIndex ="0"
+    console.log(redChipEl.style.zIndex)
+    console.log(blackChipEl.style.zIndex)
 }
 
 function placeBetBlack() {
+    console.log("placeBetBlack")
     blackChipEl.style.zIndex = "4"
     redChipEl.style.zIndex = "0"
+    console.log(redChipEl.style.zIndex)
+    console.log(blackChipEl.style.zIndex)
 }
 
 function bettingRed() {
-    if (redChipEl.style.zIndex == "4" && theColorIs == "red") {
+    console.log("bettingRed")
+    if (redChipEl.style.zIndex === "4" && theColorIs === "red") {
         winLoseEl.innerHTML = "You win!"
         moneyEl.innerHTML = moneyEl.innerHTML * 2
-    } else if (redChipEl.style.zIndex == "4" && theColorIs == "black") {
+    } else if (redChipEl.style.zIndex === "4" && theColorIs === "black") {
         winLoseEl.innerHTML = "Sorry, you lose."
         moneyEl.innerHTML = 100 
     }
@@ -80,23 +113,17 @@ function bettingRed() {
 }
 
 function bettingBlack() {
-    if (blackChipEl.style.zIndex == "4" && theColorIs == "black") {
+    console.log("bettingBlack")
+    if (blackChipEl.style.zIndex === "4" && theColorIs === "black") {
         winLoseEl.innerHTML = "You win!"
         moneyEl.innerHTML = moneyEl.innerHTML * 2 
-        blackChipEl.style.zIndex = "0"
-    } else if (blackChipEl.style.zIndex == "4" && theColorIs == "red") {
+    } else if (blackChipEl.style.zIndex === "4" && theColorIs === "red") {
         winLoseEl.innerHTML = "Sorry, you lose."
         moneyEl.innerHTML = 100
-        blackChipEl.style.zIndex = "0"
     }
+    blackChipEl.style.zIndex = "0"
 }
 
-
-// Create an array for the roulette board 0-36 + 00
-
-// Create arrays for:
-
-// evens and odds
 
 
 // 1st 12, 2nd 12, 3rd 12
@@ -111,25 +138,3 @@ function bettingBlack() {
 //     return null
 // }
 
-
-// making a class for all the numbers
-// class PossibleNumbers {
-//     constructor(number) {
-//         this.number = number
-//         this.evenOrOdd = PossibleNumbers.evenOrOdd(number)
-//         this.color = 
-//         this.thirds = 
-//       }
-//       static evenOrOdd(num) {
-//         if (num % 2 === 0) {
-//             return even
-//         } else {
-//             return odd
-//         }
-//       }
-// }
-
-
-
-// create a calculator that adds to your amount. 
-// each type of 
