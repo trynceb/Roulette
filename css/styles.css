@@ -25,10 +25,13 @@ h1 {
 
 .leftSide {
     display: flex;
+    position: fixed;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 20rem 0 0;
     /* border: solid 5px black; */
     height: 59vh;
-    margin-right: 12rem;
 }
 
 .wheel {
@@ -47,7 +50,13 @@ h1 {
 
 .rightSide {
     display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
+    height: 59vh;
+    width: 15vw;
+    margin: 0 5rem 0 25rem;
     /* border: solid 5px black; */
 }
 
@@ -57,7 +66,7 @@ h1 {
     color: whitesmoke;
     font-size: 30px;
     text-align: center;
-    margin: 4rem 0 0 -12rem;
+    margin: 0rem auto 2rem auto;
     border: solid 5px black;
     /* background-color: rgb(195, 34, 34); */
 }
@@ -65,22 +74,21 @@ h1 {
 .yourAmount {
     font-size: 25px;
     text-align: center;
-    margin: 3rem 0 0 -19rem;
+    margin: 0 0 1rem 0;
     /* border: solid 2px black; */
 }
 .money {
     font-size: 25px;
     text-align: center;
-    margin: 1rem 0 0 -19rem;
+    margin: 0 0 4rem 0;
     /* border: solid 2px black; */
 }
 
 .winLose {
     font-size: 25px;
     text-align: center;
-    position: fixed;
-    margin: 25rem 0 0 -14rem;
-    border: solid 2px black;
+    margin: 0 0 2rem 0;
+    /* border: solid 2px black; */
 }
 
 .placeBet {
@@ -93,15 +101,19 @@ h1 {
 .bets {
     display: flex;
     flex-direction: inline;
+    align-items: center;
+    justify-content: center;
     font-size: 18px;
     cursor:pointer;
     margin: 1rem 30vw auto 30vw;
-    /* border: solid 2px black; */
+    border: solid 2px black;
 }
 
 .left-bet {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
     color: #ffd966;
 }
 
@@ -110,13 +122,11 @@ h1 {
     z-index: 3;
     font-family: 'Roboto', sans-serif;
     font-size: 25px;
-    margin: 2rem 10vw auto 9vw;
 }
 
 #red-chip {
     position: fixed;
     height: 5rem;
-    margin: 1rem auto auto 3rem;
 }
 
 .red-left {
@@ -142,6 +152,8 @@ h1 {
 .right-bet {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
     color: #ffd966;
 }
 
@@ -150,13 +162,11 @@ h1 {
     z-index: 3;
     font-family: 'Roboto', sans-serif;
     font-size: 25px;
-    margin: 2rem 16vw auto 8vw;
 }
 
 #black-chip {
     position:fixed;
     height: 5rem;
-    margin: 1rem auto auto 3rem;
 }
 
 .black-left {
