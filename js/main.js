@@ -24,33 +24,18 @@ function spinTheWheel() {
         blackOrRed()
         bettingRed()
         bettingBlack()
-        console.log(redChipEl.style.zIndex)
-        console.log(blackChipEl.style.zIndex)
-        redChipEl.style.zIndex = "0"
-        blackChipEl.style.zIndex = "0"
-        console.log(redChipEl.style.zIndex)
-        console.log(blackChipEl.style.zIndex)
     } else {
         return
     }
 }
 
-//spin wheel checks if zInex is at 4 if yes, spin
-// else return ^^^
-
-
-//set a boolean as false, when clicked = true ? flase
-
-
 function randomNum() {
-    console.log("randomNum")
     let randomNumber =  Math.floor(Math.random() * 36) + 1
     numberWindowEl.innerHTML = randomNumber
     return randomNumber
 }
 
 function evenOrOdd() {
-    console.log("evenOrOdd")
     let isEven = numberWindowEl.textContent
     if (isEven % 2 == 0) {
         oddsAre = "even"
@@ -60,7 +45,6 @@ function evenOrOdd() {
 }
 
 function blackOrRed() {
-    console.log("blackOrRed")
     let number = numberWindowEl.textContent
     let isOdd = oddsAre
     let backColor
@@ -85,23 +69,16 @@ function blackOrRed() {
 
 
 function placeBetRed() {
-    console.log("placeBetRed")
     redChipEl.style.zIndex = "4"
     blackChipEl.style.zIndex ="0"
-    console.log(redChipEl.style.zIndex)
-    console.log(blackChipEl.style.zIndex)
 }
 
 function placeBetBlack() {
-    console.log("placeBetBlack")
     blackChipEl.style.zIndex = "4"
     redChipEl.style.zIndex = "0"
-    console.log(redChipEl.style.zIndex)
-    console.log(blackChipEl.style.zIndex)
 }
 
 function bettingRed() {
-    console.log("bettingRed")
     if (redChipEl.style.zIndex === "4" && theColorIs === "red") {
         winLoseEl.innerHTML = "You win!"
         moneyEl.innerHTML = moneyEl.innerHTML * 2
