@@ -1,12 +1,15 @@
 
 
 body {
-    background-color: #385572;
+    background-color: #6b8085;
     font-family: 'Abel', sans-serif;
 }
 
 h1 {
+    color: #f4901e;
+    font-size: 60px;
     text-align: center;
+    font-family: 'Solway', serif;
 }
 
 .mainContent {
@@ -19,7 +22,7 @@ h1 {
     margin-left: auto;
     overflow: hidden;
     border-radius: 15px;
-    background-color: #238d23;
+    background-color: #008955;
     box-shadow: 0rem 0rem 4rem rgba(0 0 0 / 25%);
 }
 
@@ -44,8 +47,11 @@ h1 {
     font-size: 20px;
     height: 50px;
     width: 200px;
-    background-color: #ffd966;
+    color: whitesmoke;
+    background-color: #007889;
+    border: none;
     margin: 2rem auto auto 28%;
+    box-shadow: 0rem 0rem 4rem rgba(8, 136, 125, 0.25);
 }
 
 .rightSide {
@@ -74,12 +80,14 @@ h1 {
 .yourAmount {
     font-size: 25px;
     text-align: center;
+    color: whitesmoke;
     margin: 0 0 1rem 0;
     /* border: solid 2px black; */
 }
 .money {
     font-size: 25px;
     text-align: center;
+    color: whitesmoke;
     margin: 0 0 4rem 0;
     /* border: solid 2px black; */
 }
@@ -87,14 +95,17 @@ h1 {
 .winLose {
     font-size: 25px;
     text-align: center;
+    color: whitesmoke;
     margin: 0 0 2rem 0;
     /* border: solid 2px black; */
 }
 
 .placeBet {
-    font-size: 30px;
+    font-size: 40px;
     text-align: center;
-    margin: 1rem auto auto;
+    color: #f4901e;
+    font-family: 'Solway', serif;
+    margin: 0 auto auto;
     /* border: solid 2px black; */
 }
 
@@ -105,8 +116,8 @@ h1 {
     justify-content: center;
     font-size: 18px;
     cursor:pointer;
-    margin: 1rem 30vw auto 30vw;
-    border: solid 2px black;
+    margin: -1rem 30vw auto 30vw;
+    /* border: solid 2px black; */
 }
 
 .left-bet {
@@ -114,7 +125,7 @@ h1 {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    color: #ffd966;
+    color: whitesmoke;
 }
 
 #red {
@@ -154,7 +165,7 @@ h1 {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    color: #ffd966;
+    color: whitesmoke;
 }
 
 #black {

@@ -1,6 +1,7 @@
 
 const spinBtnEl = document.querySelector(".spinBtn")
 const numberWindowEl = document.querySelector(".numberWindow")
+const numberEl = document.querySelector(".number")
 const redEl = document.querySelector(".left-bet")
 const blackEl = document.querySelector(".right-bet")
 const winLoseEl = document.querySelector(".winLose")
@@ -18,7 +19,6 @@ console.log(blackChipEl.style.zIndex)
 
 function spinTheWheel() {
     if (redChipEl.style.zIndex === "4" || blackChipEl.style.zIndex === "4") {
-        console.log("Still running")
         randomNum()
         evenOrOdd()
         blackOrRed()
@@ -31,7 +31,7 @@ function spinTheWheel() {
 
 function randomNum() {
     let randomNumber =  Math.floor(Math.random() * 36) + 1
-    numberWindowEl.innerHTML = randomNumber
+    numberEl.innerHTML = randomNumber
     return randomNumber
 }
 
