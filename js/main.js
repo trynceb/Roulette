@@ -6,16 +6,22 @@ const redEl = document.querySelector(".left-bet")
 const blackEl = document.querySelector(".right-bet")
 const winLoseEl = document.querySelector(".winLose")
 const moneyEl = document.querySelector(".money")
+
 const redChipEl = document.getElementById("red-chip")
 const blackChipEl = document.getElementById("black-chip")
+
 let oddsAre
 let theColorIs
+let numberInputEl = document.querySelector(".numberInput")
+let accountEl = document.querySelector(".account")
+let bankAccount = 500
 
 spinBtnEl.addEventListener("click", spinTheWheel)
 redEl.addEventListener("click", placeBetRed)
 blackEl.addEventListener("click", placeBetBlack)
-console.log(redChipEl.style.zIndex)
-console.log(blackChipEl.style.zIndex)
+numberInputEl.addEventListener("input", stringToNumber)
+
+
 
 function spinTheWheel() {
     if (redChipEl.style.zIndex === "4" || blackChipEl.style.zIndex === "4") {
@@ -81,25 +87,48 @@ function placeBetBlack() {
 function bettingRed() {
     if (redChipEl.style.zIndex === "4" && theColorIs === "red") {
         winLoseEl.innerHTML = "You win!"
-        moneyEl.innerHTML = moneyEl.innerHTML * 2
+        numberInputEl.value *= 2
+        bankAccount = parseInt(bankAccount) + parseInt(numberInputEl.value)
+        redChipEl.style.zIndex = "0"
+        // return accountEl
+
     } else if (redChipEl.style.zIndex === "4" && theColorIs === "black") {
         winLoseEl.innerHTML = "Sorry, you lose."
-        moneyEl.innerHTML = 100 
+        bankAccount = parseInt(bankAccount) - numberInputEl.value
+        numberInputEl.value -= numberInputEl.value
+        redChipEl.style.zIndex = "0"
+        // return accountEl
     }
-    redChipEl.style.zIndex = "0"
 }
 
 function bettingBlack() {
-    console.log("bettingBlack")
     if (blackChipEl.style.zIndex === "4" && theColorIs === "black") {
         winLoseEl.innerHTML = "You win!"
-        moneyEl.innerHTML = moneyEl.innerHTML * 2 
+        numberInputEl.value *= 2
+        bankAccount = parseInt(bankAccount) + parseInt(numberInputEl.value)
     } else if (blackChipEl.style.zIndex === "4" && theColorIs === "red") {
         winLoseEl.innerHTML = "Sorry, you lose."
-        moneyEl.innerHTML = 100
+        bankAccount = parseInt(bankAccount) - numberInputEl.value
+        numberInputEl.value -= numberInputEl.value
     }
     blackChipEl.style.zIndex = "0"
 }
+
+// Handle number changes
+function stringToNumber() {
+    // As a number
+    let num = numberInputEl.valueAsNumber
+    return num
+};
+
+    
+    // add an input
+    //Choose bet, max amount cannot > than your amount and cannot be less than $1.
+
+//your amount starts at $100
+//betting amount = amount enter
+// your amount = your amount - betting amount
+//if win  your amount = your amount + (betting amount * 2)
 
 
 
