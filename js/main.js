@@ -4,43 +4,97 @@ const numberWindowEl = document.querySelector(".numberWindow")
 const numberEl = document.querySelector(".number")
 const redEl = document.querySelector(".left-bet")
 const blackEl = document.querySelector(".right-bet")
-const winLoseEl = document.querySelector(".winLose")
-const moneyEl = document.querySelector(".money")
-
 const redChipEl = document.getElementById("red-chip")
 const blackChipEl = document.getElementById("black-chip")
+const evenEl = document.querySelector(".even-bet")
+const oddEl = document.querySelector(".odd-bet")
+const evenChipEl = document.getElementById("even-chip")
+const oddChipEl = document.getElementById("odd-chip")
+const winLoseEl = document.querySelector(".winLose")
+const oddsResultEl = document.querySelector(".oddsResult")
+const moneyEl = document.querySelector(".money")
 
-let oddsAre
 let theColorIs
+let oddsAre
 let numberInputEl = document.querySelector(".numberInput")
 let accountEl = document.querySelector(".account")
 let bankAccount = 500
+accountEl.innerHTML = bankAccount
 
 spinBtnEl.addEventListener("click", spinTheWheel)
 redEl.addEventListener("click", placeBetRed)
 blackEl.addEventListener("click", placeBetBlack)
+evenEl.addEventListener("click", placeBetEven)
+oddEl.addEventListener("click", placeBetOdd)
 numberInputEl.addEventListener("input", stringToNumber)
 
+// animation to run though colors in number window
+// $(".spinBtn").click(function() {
+//     $('.numberWindow').toggleClass('numberWindow-active');
+//   });
 
 
+console.log(numberInputEl.value)
+console.log(bankAccount)
+// activates spin wheel button, calls all the functions after bet is placed
 function spinTheWheel() {
-    if (redChipEl.style.zIndex === "4" || blackChipEl.style.zIndex === "4") {
+    if (redChipEl.style.zIndex === "4" || blackChipEl.style.zIndex === "4" || evenChipEl.style.zIndex === "4" || oddChipEl.style.zIndex === "4") {
         randomNum()
+        splittingTheBet()
         evenOrOdd()
         blackOrRed()
         bettingRed()
         bettingBlack()
+        bettingEven()
+        bettingOdd()
     } else {
         return
     }
 }
 
+// provides the random number
 function randomNum() {
     let randomNumber =  Math.floor(Math.random() * 36) + 1
     numberEl.innerHTML = randomNumber
     return randomNumber
 }
 
+// splits the value of the input accross both bets
+// switch () {
+//     case redChipEl.style.zIndex === "4" && oddChipEl.style.zIndex === "4":
+//         numberInputEl.value /= 2
+//         console.log(numberInputEl.value)
+//         break
+//     case redChipEl.style.zIndex === "4" && evenChipEl.style.zIndex === "4":
+//         numberInputEl.value /= 2
+//         break
+//     case blackChipEl.style.zIndex === "4" && oddChipEl.style.zIndex === "4":
+//         numberInputEl.value /= 2
+//         break
+//     case blackChipEl.style.zIndex === "4" && evenChipEl.style.zIndex === "4":
+//         numberInputEl.value /= 2
+//         break
+//     default:
+//         numberInputEl.value = numberInputEl.value
+//         console.log(numberInputEl.value)
+//         break
+// }
+
+function splittingTheBet() {
+    if (redChipEl.style.zIndex === "4" && oddChipEl.style.zIndex === "4") {
+        numberInputEl.value /= 2
+    } else if (redChipEl.style.zIndex === "4" && evenChipEl.style.zIndex === "4") {
+        numberInputEl.value /= 2
+    } else if (blackChipEl.style.zIndex === "4" && oddChipEl.style.zIndex === "4") {
+        numberInputEl.value /= 2
+    } else if (blackChipEl.style.zIndex === "4" && evenChipEl.style.zIndex === "4") {
+        numberInputEl.value /= 2
+    } else {
+        return
+    }
+}
+
+// checks to see if random number is even or odd
 function evenOrOdd() {
     let isEven = numberWindowEl.textContent
     if (isEven % 2 == 0) {
@@ -50,6 +104,7 @@ function evenOrOdd() {
     }
 }
 
+// asigns each number with a color and changes the background to said color in the window
 function blackOrRed() {
     let number = numberWindowEl.textContent
     let isOdd = oddsAre
@@ -73,55 +128,109 @@ function blackOrRed() {
     numberWindowEl.style.backgroundColor = backColor
 }
 
-
+// can only bet red and not black
 function placeBetRed() {
     redChipEl.style.zIndex = "4"
     blackChipEl.style.zIndex ="0"
 }
 
+// can only bet black and not red
 function placeBetBlack() {
     blackChipEl.style.zIndex = "4"
     redChipEl.style.zIndex = "0"
 }
 
+// runs if you bet red win/lose then adds or subtracts betting value from bank acount
 function bettingRed() {
     if (redChipEl.style.zIndex === "4" && theColorIs === "red") {
-        winLoseEl.innerHTML = "You win!"
+        winLoseEl.innerHTML = "It's red! You win!"
         numberInputEl.value *= 2
-        bankAccount = parseInt(bankAccount) + parseInt(numberInputEl.value)
-        redChipEl.style.zIndex = "0"
-        // return accountEl
-
+        accountEl.innerHTML = parseInt(bankAccount) + parseInt(numberInputEl.value)
     } else if (redChipEl.style.zIndex === "4" && theColorIs === "black") {
-        winLoseEl.innerHTML = "Sorry, you lose."
-        bankAccount = parseInt(bankAccount) - numberInputEl.value
+        winLoseEl.innerHTML = "It's black, you lose."
+        accountEl.innerHTML = parseInt(bankAccount) - numberInputEl.value
         numberInputEl.value -= numberInputEl.value
-        redChipEl.style.zIndex = "0"
-        // return accountEl
     }
+    redChipEl.style.zIndex = "0"
+
 }
 
+// runs if you bet black win/lose then adds or subtracts betting value from bank acount
 function bettingBlack() {
     if (blackChipEl.style.zIndex === "4" && theColorIs === "black") {
-        winLoseEl.innerHTML = "You win!"
+        winLoseEl.innerHTML = "It's black! You win!"
         numberInputEl.value *= 2
-        bankAccount = parseInt(bankAccount) + parseInt(numberInputEl.value)
+        accountEl.innerHTML = parseInt(bankAccount) + parseInt(numberInputEl.value)
     } else if (blackChipEl.style.zIndex === "4" && theColorIs === "red") {
-        winLoseEl.innerHTML = "Sorry, you lose."
-        bankAccount = parseInt(bankAccount) - numberInputEl.value
+        winLoseEl.innerHTML = "It's red, you lose."
+        accountEl.innerHTML = parseInt(bankAccount) - numberInputEl.value
         numberInputEl.value -= numberInputEl.value
     }
     blackChipEl.style.zIndex = "0"
 }
 
-// Handle number changes
+// can only bet even and not odd
+function placeBetEven() {
+    evenChipEl.style.zIndex = "4"
+    oddChipEl.style.zIndex ="0"
+}
+
+// can only bet odd and not even
+function placeBetOdd() {
+    oddChipEl.style.zIndex = "4"
+    evenChipEl.style.zIndex = "0"
+}
+
+// runs if you bet even win/lose then adds or subtracts betting value from bank acount
+function bettingEven() {
+    if (evenChipEl.style.zIndex === "4" && oddsAre === "even") {
+        oddsResultEl.innerHTML = "It's even! You win!"
+        numberInputEl.value *= 2
+        accountEl.innerHTML = parseInt(bankAccount) + parseInt(numberInputEl.value) 
+    } else if (evenChipEl.style.zIndex === "4" && oddsAre === "odd") {
+        oddsResultEl.innerHTML = "It's odd, you lose."
+        accountEl.innerHTML = parseInt(bankAccount) - numberInputEl.value
+        numberInputEl.value -= numberInputEl.value
+    }
+    evenChipEl.style.zIndex = "0"
+}
+
+// runs if you bet odd win/lose then adds or subtracts betting value from bank acount
+function bettingOdd() {
+    console.log("this is the HTML", accountEl.innerHTML)
+    console.log("this is the bank account", bankAccount)
+    if (oddChipEl.style.zIndex === "4" && oddsAre === "odd") {
+        oddsResultEl.innerHTML = "It's odd! You win!"
+        numberInputEl.value *= 2
+        accountEl.innerHTML = parseInt(bankAccount) + parseInt(numberInputEl.value) 
+        console.log(parseInt(bankAccount))
+        console.log(parseInt(numberInputEl.value))
+        bankAccount = parseInt(bankAccount) + parseInt(numberInputEl.value)
+    } else if (oddChipEl.style.zIndex === "4" && oddsAre === "even") {
+        oddsResultEl.innerHTML = "It's even, you lose."
+        accountEl.innerHTML = parseInt(bankAccount) - numberInputEl.value
+        bankAccount = parseInt(bankAccount) - parseInt(numberInputEl.value)
+        numberInputEl.value -= numberInputEl.value
+    }
+    oddChipEl.style.zIndex = "0"
+    console.log(numberInputEl.value)
+    console.log("this is the HTML", accountEl.innerHTML)
+    console.log("this is the bank account", bankAccount)
+}
+
+// Handle number changes for the input bet
 function stringToNumber() {
     // As a number
     let num = numberInputEl.valueAsNumber
     return num
 };
-
     
+// button to refresh the page
+function refreshPage(){
+    window.location.reload();
+} 
+
+
     // add an input
     //Choose bet, max amount cannot > than your amount and cannot be less than $1.
 
