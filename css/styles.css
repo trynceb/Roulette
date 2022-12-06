@@ -1,4 +1,20 @@
+@media (min-width: 600px) {
+    .mainContent {
+        display: flex;
+        flex-direction: column;
+        height: 80vh;
+    }
 
+    .red-black {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .even-odd {
+        display: flex;
+        flex-direction: column;
+    }
+}
 
 body {
     background-color: #6b8085;
@@ -86,19 +102,6 @@ h1 {
     /* background-color: rgb(195, 34, 34); */
 }
 
-@keyframes change {
-    0%   {background-color: #D60000;}
-    20%  {background-color: #232323;}
-    40%  {background-color: #D60000;}
-    60% {background-color: #00b050;}
-    80% {background-color: #232323;}
-    100% {background-color: #D60000;}
-}
-
-.numberWindow-active {
-    animation-name: change;
-    animation-duration: 3s;
-}
 
 .enter-bet {
     font-size: 25px;
@@ -366,3 +369,17 @@ footer {
 .restart-btn:active {
     transform: scale(.96);
 }
+
+/* @keyframes change {
+    0%   {background-color: #D60000;}
+    20%  {background-color: #232323;}
+    40%  {background-color: #D60000;}
+    60% {background-color: #00b050;}
+    80% {background-color: #232323;}
+    100% {background-color: #D60000;}
+}
+
+.numberWindow-active {
+    animation-name: change;
+    animation-duration: 3s;
+} */
