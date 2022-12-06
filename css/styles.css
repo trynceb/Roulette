@@ -1,4 +1,4 @@
-/* @media (min-width: 600px) {
+@media (min-width: 600px) {
     .mainContent {
         display: flex;
         flex-direction: column;
@@ -8,13 +8,9 @@
     .red-black {
         display: flex;
         flex-direction: column;
+        flex-wrap: wrap;
     }
-
-    .even-odd {
-        display: flex;
-        flex-direction: column;
-    }
-} */
+}
 
 body {
     background-color: #6b8085;
