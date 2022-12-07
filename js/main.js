@@ -19,8 +19,8 @@ let oddsAre
 let numberInputEl = document.querySelector(".numberInput")
 let accountEl = document.querySelector(".account")
 let bankAccount = 500
-accountEl.innerHTML = bankAccount
 
+accountEl.innerHTML = bankAccount
 spinBtnEl.addEventListener("click", spinTheWheel)
 redEl.addEventListener("click", placeBetRed)
 blackEl.addEventListener("click", placeBetBlack)
@@ -133,7 +133,6 @@ function bettingRed() {
 function bettingBlack() {
     if (blackChipEl.style.zIndex === "4" && theColorIs === "black") {
         winLoseEl.innerHTML = "It's black! You win!"
-        numberInputEl.value *= 2
         accountEl.innerHTML = parseInt(bankAccount) + parseInt(numberInputEl.value)
         bankAccount = parseInt(bankAccount) + parseInt(numberInputEl.value)
     } else if (blackChipEl.style.zIndex === "4" && theColorIs === "red") {
@@ -161,7 +160,6 @@ function placeBetOdd() {
 function bettingEven() {
     if (evenChipEl.style.zIndex === "4" && oddsAre === "even") {
         oddsResultEl.innerHTML = "It's even! You win!"
-        // numberInputEl.value *= 2
         accountEl.innerHTML = parseInt(bankAccount) + parseInt(numberInputEl.value)
         bankAccount = parseInt(bankAccount) + parseInt(numberInputEl.value)
     } else if (evenChipEl.style.zIndex === "4" && oddsAre === "odd") {
@@ -177,7 +175,6 @@ function bettingEven() {
 function bettingOdd() {
     if (oddChipEl.style.zIndex === "4" && oddsAre === "odd") {
         oddsResultEl.innerHTML = "It's odd! You win!"
-        numberInputEl.value *= 2
         accountEl.innerHTML = parseInt(bankAccount) + parseInt(numberInputEl.value) 
         bankAccount = parseInt(bankAccount) + parseInt(numberInputEl.value)
     } else if (oddChipEl.style.zIndex === "4" && oddsAre === "even") {
