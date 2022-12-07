@@ -18,4 +18,4 @@ Roulette is an in browser game made using HTML, CSS and JavaScript
 
 ##Icebox
 - Going to add more bets such as betting on 3rds
-- 
+- I think if I try to scale this bigger, I will change out the input and have coins be worth a standard amount
