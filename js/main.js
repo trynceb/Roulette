@@ -47,6 +47,7 @@ function spinTheWheel() {
         bettingBlack()
         bettingEven()
         bettingOdd()
+        doubleLoss()
     } else {
         return
     }
@@ -61,9 +62,7 @@ function randomNum() {
 
 // splits the value of the input accross both bets
 function splittingTheBet() {
-    if (winLoseEl.innerHTML === "I'm sorry, you lose this bet." && oddsResultEl.innerHTML === "I'm sorry, you lose this bet.") {
-        numberInputEl.value = numberInputEl.value
-    } else if (redChipEl.style.zIndex === "4" && oddChipEl.style.zIndex === "4") {
+    if (redChipEl.style.zIndex === "4" && oddChipEl.style.zIndex === "4") {
         numberInputEl.value /= 2
     } else if (redChipEl.style.zIndex === "4" && evenChipEl.style.zIndex === "4") {
         numberInputEl.value /= 2
@@ -126,7 +125,6 @@ function placeBetBlack() {
 function bettingRed() {
     if (redChipEl.style.zIndex === "4" && theColorIs === "red") {
         winLoseEl.innerHTML = "It's red! You win!"
-        // numberInputEl.value *= 2
         accountEl.innerHTML = parseInt(bankAccount) + parseInt(numberInputEl.value)
         bankAccount = parseInt(bankAccount) + parseInt(numberInputEl.value)
     } else if (redChipEl.style.zIndex === "4" && theColorIs === "black") {
@@ -171,7 +169,7 @@ function placeBetOdd() {
 function bettingEven() {
     if (evenChipEl.style.zIndex === "4" && oddsAre === "even") {
         oddsResultEl.innerHTML = "It's even! You win!"
-        numberInputEl.value *= 2
+        // numberInputEl.value *= 2
         accountEl.innerHTML = parseInt(bankAccount) + parseInt(numberInputEl.value)
         bankAccount = parseInt(bankAccount) + parseInt(numberInputEl.value)
     } else if (evenChipEl.style.zIndex === "4" && oddsAre === "odd") {
@@ -210,6 +208,14 @@ function stringToNumber() {
     let num = numberInputEl.valueAsNumber
     return num
 };
+
+function doubleLoss() {
+    if (winLoseEl.innerHTML === "I'm sorry, you lose this bet." && oddsResultEl.innerHTML === "I'm sorry, you lose this bet.") {
+        numberInputEl.value *= 2
+    } else {
+        return
+    }
+}  
     
 // button to refresh the page
 function refreshPage(){
