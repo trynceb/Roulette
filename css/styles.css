@@ -51,7 +51,7 @@ h1 {
     justify-content: center;
     margin: 0 50rem 0 0;
     height: 59vh;
-    border: solid 5px black;
+    /* border: solid 5px black; */
 }
 
 .wheel {
@@ -165,7 +165,7 @@ input {
     text-align: center;
     color: #f4901e;
     font-family: 'Solway', serif;
-    border: solid 2px black;
+    /* border: solid 2px black; */
     margin: 0 auto 36rem;
     position: fixed;
 }

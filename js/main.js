@@ -61,7 +61,9 @@ function randomNum() {
 
 // splits the value of the input accross both bets
 function splittingTheBet() {
-    if (redChipEl.style.zIndex === "4" && oddChipEl.style.zIndex === "4") {
+    if (winLoseEl.innerHTML === "I'm sorry, you lose this bet." && oddsResultEl.innerHTML === "I'm sorry, you lose this bet.") {
+        numberInputEl.value = numberInputEl.value
+    } else if (redChipEl.style.zIndex === "4" && oddChipEl.style.zIndex === "4") {
         numberInputEl.value /= 2
     } else if (redChipEl.style.zIndex === "4" && evenChipEl.style.zIndex === "4") {
         numberInputEl.value /= 2
@@ -124,11 +126,11 @@ function placeBetBlack() {
 function bettingRed() {
     if (redChipEl.style.zIndex === "4" && theColorIs === "red") {
         winLoseEl.innerHTML = "It's red! You win!"
-        numberInputEl.value *= 2
+        // numberInputEl.value *= 2
         accountEl.innerHTML = parseInt(bankAccount) + parseInt(numberInputEl.value)
         bankAccount = parseInt(bankAccount) + parseInt(numberInputEl.value)
     } else if (redChipEl.style.zIndex === "4" && theColorIs === "black") {
-        winLoseEl.innerHTML = "It's black, you lose."
+        winLoseEl.innerHTML = "I'm sorry, you lose this bet."
         accountEl.innerHTML = parseInt(bankAccount) - numberInputEl.value
         bankAccount = parseInt(bankAccount) - parseInt(numberInputEl.value)
         numberInputEl.value -= numberInputEl.value
@@ -145,7 +147,7 @@ function bettingBlack() {
         accountEl.innerHTML = parseInt(bankAccount) + parseInt(numberInputEl.value)
         bankAccount = parseInt(bankAccount) + parseInt(numberInputEl.value)
     } else if (blackChipEl.style.zIndex === "4" && theColorIs === "red") {
-        winLoseEl.innerHTML = "It's red, you lose."
+        winLoseEl.innerHTML = "I'm sorry, you lose this bet."
         accountEl.innerHTML = parseInt(bankAccount) - numberInputEl.value
         bankAccount = parseInt(bankAccount) - parseInt(numberInputEl.value)
         numberInputEl.value -= numberInputEl.value
@@ -173,7 +175,7 @@ function bettingEven() {
         accountEl.innerHTML = parseInt(bankAccount) + parseInt(numberInputEl.value)
         bankAccount = parseInt(bankAccount) + parseInt(numberInputEl.value)
     } else if (evenChipEl.style.zIndex === "4" && oddsAre === "odd") {
-        oddsResultEl.innerHTML = "It's odd, you lose."
+        oddsResultEl.innerHTML = "I'm sorry, you lose this bet."
         accountEl.innerHTML = parseInt(bankAccount) - numberInputEl.value
         bankAccount = parseInt(bankAccount) - parseInt(numberInputEl.value)
         numberInputEl.value -= numberInputEl.value
@@ -191,7 +193,7 @@ function bettingOdd() {
         accountEl.innerHTML = parseInt(bankAccount) + parseInt(numberInputEl.value) 
         bankAccount = parseInt(bankAccount) + parseInt(numberInputEl.value)
     } else if (oddChipEl.style.zIndex === "4" && oddsAre === "even") {
-        oddsResultEl.innerHTML = "It's even, you lose."
+        oddsResultEl.innerHTML = "I'm sorry, you lose this bet."
         accountEl.innerHTML = parseInt(bankAccount) - numberInputEl.value
         bankAccount = parseInt(bankAccount) - parseInt(numberInputEl.value)
         numberInputEl.value -= numberInputEl.value
