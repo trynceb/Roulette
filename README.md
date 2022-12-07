@@ -14,3 +14,8 @@ Roulette is an in browser game made using HTML, CSS and JavaScript
 #Wireframe
 
 [![HCQgKuf.md.jpg](https://iili.io/HCQgKuf.md.jpg)](https://freeimage.host/i/HCQgKuf)
+
+
+##Icebox
+- Going to add more bets such as betting on 3rds
+- 
