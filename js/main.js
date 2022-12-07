@@ -28,7 +28,6 @@ evenEl.addEventListener("click", placeBetEven)
 oddEl.addEventListener("click", placeBetOdd)
 numberInputEl.addEventListener("input", stringToNumber)
 
-
 // activates spin wheel button, calls all the functions after bet is placed
 function spinTheWheel() {
     if (redChipEl.style.zIndex === "4" || blackChipEl.style.zIndex === "4" || evenChipEl.style.zIndex === "4" || oddChipEl.style.zIndex === "4") {
@@ -192,7 +191,6 @@ function bettingOdd() {
 
 // Handle number changes for the input bet
 function stringToNumber() {
-    // As a number
     let num = numberInputEl.valueAsNumber
     return num
 };
