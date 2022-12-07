@@ -28,12 +28,6 @@ evenEl.addEventListener("click", placeBetEven)
 oddEl.addEventListener("click", placeBetOdd)
 numberInputEl.addEventListener("input", stringToNumber)
 
-// animation to run though colors in number window
-// $(".spinBtn").click(function() {
-//     $('.numberWindow').toggleClass('numberWindow-active');
-//   });
-
-
 console.log(numberInputEl.value)
 console.log(bankAccount)
 // activates spin wheel button, calls all the functions after bet is placed
@@ -172,8 +166,6 @@ function placeBetOdd() {
 
 // runs if you bet even win/lose then adds or subtracts betting value from bank acount
 function bettingEven() {
-    console.log("this is bankAccount before even", bankAccount)
-    console.log("this is numberInput before even", numberInputEl.value)
     if (evenChipEl.style.zIndex === "4" && oddsAre === "even") {
         oddsResultEl.innerHTML = "It's even! You win!"
         // numberInputEl.value *= 2
@@ -184,16 +176,12 @@ function bettingEven() {
         accountEl.innerHTML = parseInt(bankAccount) - numberInputEl.value
         bankAccount = parseInt(bankAccount) - parseInt(numberInputEl.value)
         numberInputEl.value -= numberInputEl.value
-        console.log("this is bankAccount after even", bankAccount)
-        console.log("this is numberInput after even", numberInputEl.value)
     }
     evenChipEl.style.zIndex = "0"
 }
 
 // runs if you bet odd win/lose then adds or subtracts betting value from bank acount
 function bettingOdd() {
-    console.log("this is the HTML", accountEl.innerHTML)
-    console.log("this is the bank account", bankAccount)
     if (oddChipEl.style.zIndex === "4" && oddsAre === "odd") {
         oddsResultEl.innerHTML = "It's odd! You win!"
         numberInputEl.value *= 2
@@ -206,14 +194,10 @@ function bettingOdd() {
         numberInputEl.value -= numberInputEl.value
     }
     oddChipEl.style.zIndex = "0"
-    console.log(numberInputEl.value)
-    console.log("this is the HTML", accountEl.innerHTML)
-    console.log("this is the bank account", bankAccount)
 }
 
 // Handle number changes for the input bet
 function stringToNumber() {
-    // As a number
     let num = numberInputEl.valueAsNumber
     return num
 };
@@ -230,27 +214,3 @@ function doubleLoss() {
 function refreshPage(){
     window.location.reload();
 } 
-
-
-    // add an input
-    //Choose bet, max amount cannot > than your amount and cannot be less than $1.
-
-//your amount starts at $100
-//betting amount = amount enter
-// your amount = your amount - betting amount
-//if win  your amount = your amount + (betting amount * 2)
-
-
-
-// 1st 12, 2nd 12, 3rd 12
-
-// if (number > 0 && number < 13) {
-//     return 1st 12
-// } else if (number > 12 && number < 25) {
-//     return 2nd 12
-// } else if (number > 24 && number < 37) {
-//     return 3rd 12
-// } else {
-//     return null
-// }
-
