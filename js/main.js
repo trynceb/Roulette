@@ -131,11 +131,7 @@ function bettingRed() {
         accountEl.innerHTML = parseInt(bankAccount) + parseInt(numberInputEl.value)
         bankAccount = parseInt(bankAccount) + parseInt(numberInputEl.value)
     } else if (redChipEl.style.zIndex === "4" && theColorIs === "black") {
-<<<<<<< HEAD
-        winLoseEl.innerHTML = "Sorry, you lose this bet."
-=======
         winLoseEl.innerHTML = "I'm sorry, you lose this bet."
->>>>>>> main
         accountEl.innerHTML = parseInt(bankAccount) - numberInputEl.value
         bankAccount = parseInt(bankAccount) - parseInt(numberInputEl.value)
         numberInputEl.value -= numberInputEl.value
@@ -154,11 +150,7 @@ function bettingBlack() {
         accountEl.innerHTML = parseInt(bankAccount) + parseInt(numberInputEl.value)
         bankAccount = parseInt(bankAccount) + parseInt(numberInputEl.value)
     } else if (blackChipEl.style.zIndex === "4" && theColorIs === "red") {
-<<<<<<< HEAD
-        winLoseEl.innerHTML = "Sorry, you lose this bet."
-=======
         winLoseEl.innerHTML = "I'm sorry, you lose this bet."
->>>>>>> main
         accountEl.innerHTML = parseInt(bankAccount) - numberInputEl.value
         bankAccount = parseInt(bankAccount) - parseInt(numberInputEl.value)
         numberInputEl.value -= numberInputEl.value
@@ -188,11 +180,7 @@ function bettingEven() {
         accountEl.innerHTML = parseInt(bankAccount) + parseInt(numberInputEl.value)
         bankAccount = parseInt(bankAccount) + parseInt(numberInputEl.value)
     } else if (evenChipEl.style.zIndex === "4" && oddsAre === "odd") {
-<<<<<<< HEAD
-        oddsResultEl.innerHTML = "Sorry, you lose this bet."
-=======
         oddsResultEl.innerHTML = "I'm sorry, you lose this bet."
->>>>>>> main
         accountEl.innerHTML = parseInt(bankAccount) - numberInputEl.value
         bankAccount = parseInt(bankAccount) - parseInt(numberInputEl.value)
         numberInputEl.value -= numberInputEl.value
@@ -212,11 +200,7 @@ function bettingOdd() {
         accountEl.innerHTML = parseInt(bankAccount) + parseInt(numberInputEl.value) 
         bankAccount = parseInt(bankAccount) + parseInt(numberInputEl.value)
     } else if (oddChipEl.style.zIndex === "4" && oddsAre === "even") {
-<<<<<<< HEAD
-        oddsResultEl.innerHTML = "Sorry, you lose this bet."
-=======
         oddsResultEl.innerHTML = "I'm sorry, you lose this bet."
->>>>>>> main
         accountEl.innerHTML = parseInt(bankAccount) - numberInputEl.value
         bankAccount = parseInt(bankAccount) - parseInt(numberInputEl.value)
         numberInputEl.value -= numberInputEl.value
