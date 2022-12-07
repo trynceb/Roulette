@@ -167,7 +167,7 @@ input {
     color: #f4901e;
     font-family: 'Solway', serif;
     /* border: solid 2px black; */
-    margin: 0 auto 36rem;
+    margin: 4rem auto 36rem;
     position: fixed;
 }
 
@@ -359,14 +359,14 @@ input {
 footer {
     display: flex;
     flex-direction: row;
-    margin: 40rem 0 0 0rem;
+    margin: 30rem 0 0 0rem;
     position: fixed;
 }
 
 .bank-account {
     color: whitesmoke;
     width: 12vw;
-    margin: 1.25rem 0 0 0;
+    margin: 1.75rem 0 0 0;
     /* position: fixed; */
     /* border: solid 5px black; */
 }
