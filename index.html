@@ -26,70 +26,71 @@
     <script defer src="js/main.js"></script>
   </head>
   <body>
+    <header>
       <h1>Welcome to Roulette!</h1>
-      <section class="mainContent">
-      <div class="leftSide">
-        <img class="wheel" src="https://iili.io/Hfc0jHb.md.png" />
-        <button class="spinBtn">Spin the Wheel</button>
-      </div>
-      <div class="rightSide">
+    </header>
+    <main class="mainContent">
+      <section class="roulette">
+        <img class="wheel" src="https://iili.io/Hfc0jHb.md.png" alt="Roulette Wheel" />
         <div class="numberWindow">
           <p class="number"></p>
         </div>
-        <div class="enter-bet">Enter your bet:</div>
-        <div class="money">
-          <input
-            type="number"
-            class="numberInput"
-            value="100"
-            step="100"
-            min="100"
-          />
+      </section>
+      <section class="betting-interface">
+        <div class="controls">
+          <button class="spinBtn">Spin the Wheel</button>
+          <div class="enter-bet">Enter your bet:</div>
+          <div class="money">
+            <input
+              type="number"
+              class="numberInput"
+              value="100"
+              step="100"
+              min="100"
+            />
+          </div>
+          <div class="winLose"></div>
+          <div class="oddsResult"></div>
         </div>
-        <div class="winLose"></div>
-        <div class="oddsResult"></div>
-      </div>
-      <div class="bets">
-        <div class="placeBet">
-          <p>Place Your Bet</p>
-        </div>
-        <div class="red-black">
-          <div class="left-bet">
-            <p id="red">Red</p>
-            <img src="https://iili.io/HfbFk0l.md.png" id="red-chip" />
-            <div class="red-left"></div>
-            <div class="red-right"></div>
+        <div class="bets">
+          <div class="placeBet">
+            <p>Place Your Bet</p>
           </div>
-          <div class="right-bet">
-            <p id="black">Black</p>
-            <img src="https://iili.io/HfbFk0l.md.png" id="black-chip" />
-            <div class="black-left"></div>
-            <div class="black-right"></div>
+          <div class="red-black">
+            <div class="left-bet">
+              <p id="red">Red</p>
+              <img src="https://iili.io/HfbFk0l.md.png" id="red-chip" alt="red chip" />
+              <div class="red-left"></div>
+              <div class="red-right"></div>
+            </div>
+            <div class="right-bet">
+              <p id="black">Black</p>
+              <img src="https://iili.io/HfbFk0l.md.png" id="black-chip" alt="black chip" />
+              <div class="black-left"></div>
+              <div class="black-right"></div>
+            </div>
           </div>
-        </div>
-        <div class="even-odd">
-          <div class="even-bet">
-            <p id="even">Even</p>
-            <img src="https://iili.io/HfbFk0l.md.png" id="even-chip" />
-            <div class="even-left"></div>
-            <div class="even-right"></div>
-          </div>
-          <div class="odd-bet">
-            <p id="odd">Odd</p>
-            <img src="https://iili.io/HfbFk0l.md.png" id="odd-chip" />
-            <div class="odd-left"></div>
-            <div class="odd-right"></div>
+          <div class="even-odd">
+            <div class="even-bet">
+              <p id="even">Even</p>
+              <img src="https://iili.io/HfbFk0l.md.png" id="even-chip" alt="even chip" />
+              <div class="even-left"></div>
+              <div class="even-right"></div>
+            </div>
+            <div class="odd-bet">
+              <p id="odd">Odd</p>
+              <img src="https://iili.io/HfbFk0l.md.png" id="odd-chip" alt="odd chip" />
+              <div class="odd-left"></div>
+              <div class="odd-right"></div>
+            </div>
           </div>
         </div>
-        <footer>
-          <div class="bank-account">
-            Bank Account: $<span class="account"></span>
-          </div>
-          <button type="submit" onClick="refreshPage()" class="restart-btn">
-            Restart
-          </button>
-        </footer>
-      </div>
-    </section>
+      </section>
+      <footer>
+        <div class="bank-account">
+          Bank Account: $<span class="account"></span>
+        </div>
+      </footer>
+    </main>
   </body>
 </html>
