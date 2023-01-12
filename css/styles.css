@@ -1,202 +1,30 @@
-/* Game container styles */
-.roulette {
-    position: relative;
-    width: 60%;
+.wheel {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #ddd;
     margin: 0 auto;
 }
 
-.numberWindow {
-    position: absolute;
-    top: 20%;
-    left: 45%;
-    font-size: 3rem;
-    font-weight: bold;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 100%;
-}
-
-/* Spin button */
-.spinBtn {
-    background-color: #006600;
-    color: #fff;
-    padding: 10px 20px;
-    font-size: 1.3rem;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    margin-top: 20px;
-}
-
-/* Betting Input */
-.enter-bet, .money {
-    margin-top: 10px;
-    font-size: 1.2rem;
-    text-align: center;
-}
-
-.numberInput {
-    width: 80px;
-    font-size: 1.3rem;
-    text-align: center;
-    border: 2px solid #ccc;
-    padding: 10px;
-    border-radius: 10px;
-}
-
-/* Result styles */
-.winLose, .oddsResult {
-    font-size: 1.2rem;
-    text-align: center;
-    margin-top: 10px;
-}
-
-/* Betting buttons */
-.placeBet {
-    margin: 20px 0;
-    font-size: 1.3rem;
-    text-align: center;
-}
-
-.red-black, .even-odd {
-    display: flex;
-    justify-content: center;
-}
-
-.left-bet, .right-bet, .even-bet, .odd-bet {
-    display: flex;
-    align-items: center;
-    margin: 0 10px;
-}
-
-.left-bet p, .right-bet p, .even-bet p, .odd-bet p {
-    margin-right: 10px;
-    font-size: 1.3rem;
-    font-weight: bold;
-}
-
-#red-chip, #black-chip, #even-chip, #odd-chip {
+.bet {
     width: 50px;
-}
-
-/* Bank account */
-.bank-account {
-    text-align: center;
-    font-size: 1.2rem;
-    margin-top: 20px;
-}
-
-/* Spinning animation */
-.spin {
-    animation: spin 2s ease-in-out;
-}
-
-@keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-.spinBtn{
-    border: none;
-    padding: 15px 30px;
-    margin-top: 10px;
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 12px;
-}
-
-.numberInput{
-    width: 80px;
-    height: 25px;
-    margin-top: 10px;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-.placeBet{
-    margin-top: 15px;
-    font-size: 20px;
-    text-align: center;
-}
-
-.red-black{
-    display: flex;
-    justify-content: space-around;
-}
-
-.even-odd{
-    display: flex;
-    justify-content: space-around;
-    margin-top: 15px;
-}
-
-#red, #black, #even, #odd{
-    font-size: 20px;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-#red-chip, #black-chip, #even-chip, #odd-chip{
-    width: 60px;
-    height: 60px;
-    cursor: pointer;
-    margin-bottom: 10px;
-}
-
-.red-left, .red-right, .black-left, .black-right, .even-left, .even-right, .odd-left, .odd-right {
-    width: 25px;
-    height: 25px;
-    margin-right: 10px;
-    margin-left: 10px;
-    cursor: pointer;
+    height: 50px;
     border-radius: 50%;
+    margin: 0 auto;
 }
 
-.red-left{
+.redChip {
     background-color: #D60000;
 }
 
-.red-right{
-    background-color: #D60000;
-}
-
-.black-left{
+.blackChip {
     background-color: #000000;
 }
 
-.black-right{
-    background-color: #000000;
+.evenChip {
+    background-color: #2ECC71;
 }
 
-.even-left{
-    background-color: #00D600;
-}
-
-.even-right{
-    background-color: #00D600;
-}
-
-.odd-left{
-    background-color: #D600D6;
-}
-
-.odd-right{
-    background-color: #D600D6;
-}
-
-.winLose, .oddsResult{
-    text-align: center;
-    font-size: 20px;
-    margin-top: 15px;
-}
-
-footer{
-    text-align: center;
-    font-size: 20px;
-    margin-top: 15px;
+.oddChip {
+    background-color: #E74C3C;
 }

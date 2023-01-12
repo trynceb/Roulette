@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Roulette</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link
       href="https://fonts.googleapis.com/css2?family=Abel&display=swap"
       rel="stylesheet"
@@ -25,72 +26,77 @@
     ></script>
     <script defer src="js/main.js"></script>
   </head>
-  <body>
-    <header>
-      <h1>Welcome to Roulette!</h1>
-    </header>
-    <main class="mainContent">
-      <section class="roulette">
-        <img class="wheel" src="https://iili.io/Hfc0jHb.md.png" alt="Roulette Wheel" />
-        <div class="numberWindow">
-          <p class="number"></p>
+  <div class="container">
+    <div class="row">
+        <div class="col-12 text-center my-3">
+            <h1 class="text-primary">Roulette Game</h1>
         </div>
-      </section>
-      <section class="betting-interface">
-        <div class="controls">
-          <button class="spinBtn">Spin the Wheel</button>
-          <div class="enter-bet">Enter your bet:</div>
-          <div class="money">
-            <input
-              type="number"
-              class="numberInput"
-              value="100"
-              step="100"
-              min="100"
-            />
-          </div>
-          <div class="winLose"></div>
-          <div class="oddsResult"></div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title text-center">Your Account</h4>
+                    <p class="text-center account">$500</p>
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-primary" id="spinBtn">Spin the Wheel</button>
+                </div>
+            </div>
         </div>
-        <div class="bets">
-          <div class="placeBet">
-            <p>Place Your Bet</p>
-          </div>
-          <div class="red-black">
-            <div class="left-bet">
-              <p id="red">Red</p>
-              <img src="https://iili.io/HfbFk0l.md.png" id="red-chip" alt="red chip" />
-              <div class="red-left"></div>
-              <div class="red-right"></div>
+        <div class="col-12 col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title text-center">Wheel and Results</h4>
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <div class="wheel"></div>
+                            <p class="number"></p>
+                        </div>
+                        <div class="col-12 text-center my-3">
+                            <div class="winLose"></div>
+                            <div class="oddsResult"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="right-bet">
-              <p id="black">Black</p>
-              <img src="https://iili.io/HfbFk0l.md.png" id="black-chip" alt="black chip" />
-              <div class="black-left"></div>
-              <div class="black-right"></div>
+        </div>
+    </div>
+    <div class="row my-3">
+        <div class="col-12 col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title text-center">Place Bets</h4>
+                    <div class="form-group">
+                        <label for="betAmount">Bet Amount</label>
+                        <input type="number" class="form-control" id="betAmount">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-block redEl" id="redBtn">Red</button>
+                        <button class="btn btn-secondary btn-block blackEl" id="blackBtn">Black</button>
+                        <button class="btn btn-success btn-block evenEl" id="evenBtn">Even</button>
+                        <button class="btn btn-danger btn-block oddEl" id="oddBtn">Odd</button>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="even-odd">
-            <div class="even-bet">
-              <p id="even">Even</p>
-              <img src="https://iili.io/HfbFk0l.md.png" id="even-chip" alt="even chip" />
-              <div class="even-left"></div>
-              <div class="even-right"></div>
-            </div>
-            <div class="odd-bet">
-              <p id="odd">Odd</p>
-              <img src="https://iili.io/HfbFk0l.md.png" id="odd-chip" alt="odd chip" />
-              <div class="odd-left"></div>
-              <div class="odd-right"></div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title text-center">Your Bets</h4>
+                    <div class="form-group">
+                      <div class="bet redChip"></div>
+                      <div class="bet blackChip"></div>
+                      <div class="bet evenChip"></div>
+                      <div class="bet oddChip"></div>
+                  </div>
+                  <div class="form-group">
+                      <button class="btn btn-warning btn-block clearBtn" id="clearBtn">Clear Bets</button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </section>
-      <footer>
-        <div class="bank-account">
-          Bank Account: $<span class="account"></span>
-        </div>
-      </footer>
-    </main>
-  </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </html>
